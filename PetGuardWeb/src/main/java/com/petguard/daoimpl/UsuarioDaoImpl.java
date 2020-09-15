@@ -41,5 +41,10 @@ public class UsuarioDaoImpl implements Serializable, IUsuario{
 		}
 		return listaU;
 	}
+	@Override
+	public java.util.List<Usuario> List() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
