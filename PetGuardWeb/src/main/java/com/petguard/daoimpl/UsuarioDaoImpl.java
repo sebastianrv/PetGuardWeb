@@ -30,10 +30,10 @@ public class UsuarioDaoImpl implements Serializable, IUsuario{
 			// TODO: handle exception
 		}
 	}
-	@SuppressWarnings("unchecked")
 	public List<Usuario> list(){
 		List<Usuario> listaU=new ArrayList<Usuario>();
 		try {
+			@SuppressWarnings("unused")
 			Query q=em.createQuery("from Usuario 1");
 		} catch (Exception e) {
 			System.out.println("Error al listar");
