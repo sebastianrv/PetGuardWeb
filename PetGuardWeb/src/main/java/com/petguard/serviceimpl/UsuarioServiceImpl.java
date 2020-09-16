@@ -8,9 +8,10 @@ import javax.inject.Named;
 
 import com.petguard.daointerface.IUsuario;
 import com.petguard.entity.Usuario;
+import com.petguard.serviceinterface.IUsuarioService;
 @Named
 @RequestScoped
-public class UsuarioServiceImpl implements IUsuario,Serializable{
+public class UsuarioServiceImpl implements IUsuarioService,Serializable{
 
 	/**
 	 * 
@@ -26,7 +27,7 @@ public class UsuarioServiceImpl implements IUsuario,Serializable{
 	}
 
 	@Override
-	public java.util.List<Usuario> List() {
+	public java.util.List<Usuario> list() {
 		// TODO Auto-generated method stub
 		return IUDao.List();
 	}
