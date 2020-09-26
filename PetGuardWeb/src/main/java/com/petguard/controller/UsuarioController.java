@@ -34,6 +34,7 @@ public class UsuarioController {
 		try {
 			IServiceU.insert(u);
 			cleanUsuario();
+			this.list();
 			
 		} catch (Exception e) {
 			e.getMessage();

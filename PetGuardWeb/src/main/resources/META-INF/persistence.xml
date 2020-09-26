@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="PetGuardWeb"
 		transaction-type="JTA">
-		<jta-data-source>java:/webDS</jta-data-source>
+		<jta-data-source>java:/PetGuardDS</jta-data-source>
 		<class>com.petguard.entity.Usuario</class>
 		<properties>
 			<property
