@@ -7,6 +7,7 @@
 		transaction-type="JTA">
 		<jta-data-source>java:/PetGuardDS</jta-data-source>
 		<class>com.petguard.entity.Usuario</class>
+		<class>com.petguard.entity.Mascota</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"
