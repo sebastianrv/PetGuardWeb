@@ -8,6 +8,11 @@
 		<jta-data-source>java:/PetGuardDS</jta-data-source>
 		<class>com.petguard.entity.Usuario</class>
 		<class>com.petguard.entity.Mascota</class>
+		<class>com.petguard.entity.Cliente</class>
+		<class>com.petguard.entity.Ubicacion</class>
+		<class>com.petguard.entity.PagoTarjeta</class>
+		<class>com.petguard.entity.Rol</class>
+		<class>com.petguard.entity.RolUsuario</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"

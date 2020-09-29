@@ -9,10 +9,10 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
-import com.petguard.daointerface.IMascota;
-import com.petguard.entity.Mascota;
+import com.petguard.daointerface.IPagoTarjeta;
+import com.petguard.entity.PagoTarjeta;
 
-public class MascotaDaoImpl implements Serializable, IMascota {
+public class PagoTarjetaDaoImpl implements Serializable, IPagoTarjeta {
 
 	/**
 	 * 
@@ -22,24 +22,24 @@ public class MascotaDaoImpl implements Serializable, IMascota {
 	private EntityManager em;
 	
 	@Transactional
-	public void insert(Mascota mas) {
+	public void insert(PagoTarjeta pagot) {
 		try {
-			em.persist(mas);
+			em.persist(pagot);
 		} catch (Exception e) {
-		System.out.println("Error al registrarse");	
+			System.out.println("Error al registrarse");
 			// TODO: handle exception
 		}
 	}
-	public List<Mascota>list(){
-		List<Mascota>listaM=new ArrayList<Mascota>();
+	public List<PagoTarjeta> list(){
+		List<PagoTarjeta> listaPa=new ArrayList<PagoTarjeta>();
 		try {
 			@SuppressWarnings("unused")
-			Query q=em.createQuery("from Mascota 1");
+			Query q=em.createQuery("from Usuario 1");
 		} catch (Exception e) {
-			System.out.println("Error al listar");			
+			System.out.println("Error al listar");
 			// TODO: handle exception
 		}
-		return listaM;
-	
+		return listaPa;
 	}
+
 }

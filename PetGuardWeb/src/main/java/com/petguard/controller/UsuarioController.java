@@ -28,14 +28,13 @@ public class UsuarioController {
 
 	public String newUsuario() {
 		this.setU(new Usuario());
-		return "usuario.xhtml";
+		return "index.xhtml";
 	}
 	public void insert() {
 		try {
 			IServiceU.insert(u);
 			cleanUsuario();
-			this.list();
-			
+			this.list();			
 		} catch (Exception e) {
 			e.getMessage();
 			// TODO: handle exception

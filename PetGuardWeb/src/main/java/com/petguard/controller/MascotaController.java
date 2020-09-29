@@ -18,17 +18,19 @@ public class MascotaController {
 	private IMascotaService IServiceM;
 	private Mascota m;
 	List<Mascota> listMascotas;
-	
+
 	@PostConstruct
 	public void init() {
-		this.listMascotas=new ArrayList<Mascota>();
-		this.m=new Mascota();
+		this.listMascotas = new ArrayList<Mascota>();
+		this.m = new Mascota();
 		this.list();
 	}
+
 	public String newMascota() {
 		this.setM(new Mascota());
-		return "usuario.xhtml";
+		return "index.xhtml";
 	}
+
 	public void insert() {
 		try {
 			IServiceM.insert(m);
@@ -39,29 +41,35 @@ public class MascotaController {
 			// TODO: handle exception
 		}
 	}
+
 	public void list() {
-	try {
-		listMascotas=IServiceM.list();
-	} catch (Exception e) {
-		e.getMessage();
+		try {
+			listMascotas = IServiceM.list();
+		} catch (Exception e) {
+			e.getMessage();
+		}
 	}
-	}
+
 	private void cleanMascota() {
 		this.init();
 		// TODO Auto-generated method stub
-		
+
 	}
+
 	public Mascota getM() {
 		return m;
 	}
+
 	public void setM(Mascota m) {
 		this.m = m;
 	}
+
 	public List<Mascota> getListMascotas() {
 		return listMascotas;
 	}
+
 	public void setListMascotas(List<Mascota> listMascotas) {
 		this.listMascotas = listMascotas;
 	}
-	
+
 }
