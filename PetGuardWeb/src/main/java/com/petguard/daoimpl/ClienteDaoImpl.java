@@ -1,12 +1,20 @@
 package com.petguard.daoimpl;
 
+import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import com.petguard.daointerface.ICliente;
 import com.petguard.entity.Cliente;
 
-public class ClienteDaoImpl {
+public class ClienteDaoImpl implements ICliente, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@PersistenceContext(unitName="PetGuardWeb")
 	private EntityManager em;
 	
@@ -26,5 +34,10 @@ public class ClienteDaoImpl {
 			System.out.println("Error al actualizar clientes");
 			// TODO: handle exception
 		}
+	}
+	@Override
+	public List<Cliente> list() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

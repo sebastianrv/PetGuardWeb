@@ -3,7 +3,6 @@ package com.petguard.serviceimpl;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -12,7 +11,6 @@ import com.petguard.entity.Cliente;
 import com.petguard.serviceinterface.IClienteService;
 
 @Named
-@RequestScoped
 public class ClienteServiceImpl implements IClienteService, Serializable {
 	/**
 	 * 

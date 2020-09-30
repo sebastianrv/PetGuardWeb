@@ -42,101 +42,93 @@ public class Usuario implements Serializable {
 	private String username; 
 	@Column(name = "password", nullable = false)
 	private String password;
-
+	@Column(name = "state", nullable = false, length = 1)
+	private String state;
 	
 	public Usuario() {
 		super();
 	}
 
-
 	public int getCUsuario() {
 		return CUsuario;
 	}
-
 
 	public void setCUsuario(int cUsuario) {
 		CUsuario = cUsuario;
 	}
 
-
 	public Cliente getCliente() {
 		return cliente;
 	}
-
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 
-
 	public String getNNombres() {
 		return NNombres;
 	}
-
 
 	public void setNNombres(String nNombres) {
 		NNombres = nNombres;
 	}
 
-
 	public String getNApellidos() {
 		return NApellidos;
 	}
-
 
 	public void setNApellidos(String nApellidos) {
 		NApellidos = nApellidos;
 	}
 
-
 	public Integer getNTelefono() {
 		return NTelefono;
 	}
-
 
 	public void setNTelefono(Integer nTelefono) {
 		NTelefono = nTelefono;
 	}
 
-
 	public String getTCorreo() {
 		return TCorreo;
 	}
-
 
 	public void setTCorreo(String tCorreo) {
 		TCorreo = tCorreo;
 	}
 
-
 	public Date getDFechaNacimiento() {
 		return DFechaNacimiento;
 	}
-
 
 	public void setDFechaNacimiento(Date dFechaNacimiento) {
 		DFechaNacimiento = dFechaNacimiento;
 	}
 
-
 	public String getUsername() {
 		return username;
 	}
-
 
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
-
 	public String getPassword() {
 		return password;
 	}
 
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
 
 
 
