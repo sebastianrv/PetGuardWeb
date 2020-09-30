@@ -49,6 +49,21 @@ public class Usuario implements Serializable {
 		super();
 	}
 
+	public Usuario(int CUsuario, Cliente Cliente, String NNombres, String NApellidos, Integer NTelefono, String TCorreo,
+			Date DFechaNacimiento, String username, String password, String state) {
+		super();
+		this.CUsuario = CUsuario;
+		this.cliente = Cliente;
+		this.NNombres = NNombres;
+		this.NApellidos = NApellidos;
+		this.NTelefono = NTelefono;
+		this.TCorreo = TCorreo;
+		this.DFechaNacimiento = DFechaNacimiento;
+		this.username = username;
+		this.password = password;
+		this.state = state;
+	}
+
 	public int getCUsuario() {
 		return CUsuario;
 	}

@@ -1,6 +1,7 @@
 package com.petguard.entity;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,9 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int CCliente;
+	
+	@Column(name = "CUsuario", nullable = false)
+	private int CUsuario;
 	@OneToOne(cascade = CascadeType.ALL, mappedBy = "cliente")
 	private Usuario usuario;
 
@@ -22,9 +26,10 @@ public class Cliente {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cliente(int CCliente, Usuario usuario) {
+	public Cliente(int CCliente, int CUsuario, Usuario usuario) {
 		super();
 		this.CCliente = CCliente;
+		this.CUsuario = CUsuario;
 		this.usuario = usuario;
 	}
 
@@ -36,6 +41,14 @@ public class Cliente {
 		CCliente = cCliente;
 	}
 
+	public int getCUsuario() {
+		return CUsuario;
+	}
+
+	public void setCUsuario(int cUsuario) {
+		CUsuario = cUsuario;
+	}
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -44,6 +57,7 @@ public class Cliente {
 		this.usuario = usuario;
 	}
 
+	
 
 
 

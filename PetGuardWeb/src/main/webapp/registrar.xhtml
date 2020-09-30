@@ -5,64 +5,72 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<ui:composition template="master.xhtml">
+<h:head>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link>
+	<link rel="shortcut icon" type="image/x-icon"
+		href="resources/img/favicon.ico" />
+</h:head>
+<body>
+	<h:form id="formulario">
+		<p:growl id="men" />
+		<center>
+			<h:graphicImage value="/Resources/img/boton-registro.jpg"
+				height="15%" width="15%"></h:graphicImage>
+			<br />
+		</center>
+		<div align="center">
+			<f:facet name="header">Registrar Usuario</f:facet>
+			<h:panelGrid id="pg" columns="4">
 
-	<ui:define name="content">
-		<h:form>
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<h:outputLabel for="id" value="Documento identidad"
-				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="id" styleClass="form-control"
-				value="#{usuarioController.u.CUsuario}" maxlength="8"
-				required="true" />
-			<br />
-			<h:outputLabel for="name" value="Nombres" styleClass="control-label" />
-			<p:inputText autocomplete="off" id="name" styleClass="form-control"
-				value="#{usuarioController.u.NNombres}" maxlength="45"
-				required="true" />
-			<br />
-			<h:outputLabel for="surname" value="Apellidos"
-				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="surname"
-				styleClass="form-control" value="#{usuarioController.u.NApellidos}"
-				maxlength="45" required="true" />
-			<br />
-			<h:outputLabel for="phone" value="Telefono"
-				styleClass="control-label" />
-			<p:inputText autocomplete="off" id="phone" styleClass="form-control"
-				value="#{usuarioController.u.NTelefono}" maxlength="9"
-				required="true" />
-			<br />
-			<h:outputLabel for="correo" value="Correo" styleClass="control-label" />
-			<p:inputText autocomplete="off" id="correo" styleClass="form-control"
-				value="#{usuarioController.u.TCorreo}" maxlength="45"
-				required="true" />
-			<br />
-			<h:outputLabel for="date" value="Fecha de nacimiento"
-				styleClass="control-label" />
-			<p:calendar id="date" pattern="dd/MM/yyyy"
-				value="#{usuarioController.u.DFechaNacimiento}" showOn="button"
-				timeZone="UTC" required="true">
-			</p:calendar>
-			<br />
-			<p:commandButton value="Guardar"
-				actionListener="#{usuarioController.insert()}"
-				styleClass="btn btn-danger" update="@form"
-				action="listUsuario?faces-redirect=true" />
-			<p:commandButton value="Cancelar"
-				action="listUsuario?faces-redirect=true" immediate="true"
-				styleClass="btn btn-default" ajax="false" />
+				<p:outputLabel for="txtDoc" value="Documento de identidad" />
+				<p:inputText id="txtDoc"
+					value="#{RegisterController.cliente.CUsuario}" maxlength="8"
+					required="true" styleClass="form-control" />
+				<h:column />
+				<br />
+				<p:outputLabel for="txtNombre" value="Nombres" />
+				<p:inputText id="txtNombre"
+					value="#{RegisterController.usuario.NNombres}" maxlength="45"
+					required="true" styleClass="form-control" />
+				<h:column />
+				<br />
+				<p:outputLabel for="txtApp" value="Apellidos" />
+				<p:inputText id="txtApp"
+					value="#{RegisterController.usuario.NApellidos}" maxlength="45"
+					required="true" styleClass="form-control" />
+				<h:column />
+				<br />
+				<p:outputLabel for="txtTel" value="Telefono" />
+				<p:inputText id="txtTel"
+					value="#{RegisterController.usuario.Ntelefono}" maxlength="10"
+					required="true" styleClass="form-control" />
+				<h:column />
+				<br />
+				<p:outputLabel for="txtCorr" value="Correo" />
+				<p:inputText id="txtCorr"
+					value="#{RegisterController.usuario.TCorreo}" required="true"
+					styleClass="form-control" />
+				<h:column />
+				<br />
+				<h:outputLabel for="date" value="Fecha de nacimiento" />
+				<p:calendar id="date" pattern="dd/MM/yyyy"
+					value="#{RegisterController.usuario.DFechaNacimiento}"
+					showOn="button" timeZone="UTC" required="true">
+				</p:calendar>
+				<br />
+				<p:commandButton value="Guardar"
+					actionListener="#{RegisterController.registerUser()}"
+					styleClass="btn btn-danger" update="@form"
+					action="login?faces-redirect=true" />
+				<br />
+				<p:commandButton value="Cancelar"
+					action="listUsuario?faces-redirect=true" immediate="true"
+					styleClass="btn btn-default" ajax="false" />
+				<br />
+			</h:panelGrid>
+		</div>
+	</h:form>
 
-
-		</h:form>
-	</ui:define>
-
-	<ui:define name="footerCont">
-
-	</ui:define>
-</ui:composition>
+</body>
 </html>
